@@ -1,16 +1,21 @@
 package com.loopy.springbasic;
 
 import com.loopy.springbasic.domain.Member;
+import com.loopy.springbasic.repository.MemberRepository;
 import com.loopy.springbasic.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+//@Service
 public class MemberService {
 
-    private final MemoryMemberRepository repository;
+    private final MemberRepository repository;
 
-    public MemberService(MemoryMemberRepository repository) {
+    @Autowired
+    public MemberService(MemberRepository repository) {
         this.repository = repository;
     }
 
